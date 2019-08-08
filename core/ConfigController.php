@@ -23,7 +23,7 @@ class ConfigController {
             {
                $this->UrlController = $this->slugController($this->UrlConjunto[0]);
             }else{
-                $this->UrlController = "Home";
+                $this->UrlController = CONTROLER;
             }
 
             //condição dos segundo paramentro 
@@ -38,7 +38,7 @@ class ConfigController {
             echo "Controller: {$this->UrlController}  <br>";
             //  caso nao tenha paramentro entra else aonde vai ter valores fixos
         }else{
-            $this->UrlController = "home";
+            $this->UrlController = CONTROLER;
             $this->UrlParamentro= null;
         }
       
@@ -83,7 +83,7 @@ class ConfigController {
 
             public function carregar()
             {
-                echo "carregando deu bom";
+               // echo "carregando deu bom";
                 if (file_exists('app/sts/Controllers/' . $this->UrlController . '.php')) {
                     $classe = "\\Sts\\Controllers\\" . $this->UrlController;
                 } else {
